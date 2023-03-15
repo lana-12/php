@@ -1,0 +1,16 @@
+{
+    "name": "giaco/php",
+    "autoload": {
+        "psr-4": {
+            "src\\":"src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Virginie Giacometti",
+            "email": "lana.12@wanadoo.fr"
+        }
+    ],
+    "require": {}
+}
+
