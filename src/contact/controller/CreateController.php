@@ -1,8 +1,12 @@
 <?php
+// Séparation ok - 17/03/23
 
-require_once '../dataBase/install.php';
+// TODO lIST
+    //CHANGER LA REDIRECTION PEUT-ETRE ACCUEIL OU LIST ???
+    //Si j enleve le header, le message $success display mais bloque la navBar ???
 
-//mettre les message error success ds une div alerte
+require_once '../database/install.php';
+
 
 // Create message contact
 try {
@@ -13,7 +17,7 @@ try {
     if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 
         $query = $pdo->prepare('INSERT INTO contact (name, email, message) VALUE (:name, :email, :message)');
-        // var_dump($query);
+
         //Premiere methodes en protégeant la request
         $query->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
         $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
@@ -26,11 +30,13 @@ try {
         // 	'message' => $_POST['message'],
         // ]);
         $query->execute();
+
+        //A revoir car bloque la navBar
         echo $success = 'Message bien envoyé';
 
-        //CHANGER LA REDIRECTION PEUT-ETRE ACCUEIL ???
+        //CHANGER LA REDIRECTION PEUT-ETRE ACCUEIL OU LIST ???
         header('Location: ./create.php');
-        exit();
+        exit;
     }
     // }
 } catch (PDOException $e) {

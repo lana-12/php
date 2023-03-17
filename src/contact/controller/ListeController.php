@@ -1,21 +1,26 @@
 <?php
+// Séparation ok - 17/03/23
+// TODO lIST
+    // Afficher moins de détail=>ok
+    // Au clic rediriger vers plus de détail=>ok
 
-require_once '../dataBase/install.php';
+require_once '../database/install.php';
+
 
 // Display messagesContact = findAll()
 try {
     if (!isset($pdo)) {
-        $error = "Oups !! Une erreur est survenue lors de la récupération des messages.
-";
+        $error = "Oups !! Une erreur est survenue lors de la récupération des messages.";
     } else{
         $query = $pdo->prepare('SELECT * FROM contact ORDER BY `created_at` DESC');
-        // var_dump($query);
         $query->execute();
         $contacts = $query->fetchAll(PDO::FETCH_OBJ);
     }
 
+
 } catch (PDOException $e) {
     $error = $e->getMessage();
-    echo 'Oups une erreur s\'est produite';
+    echo 'Oups, une erreur s\'est produite lors de la récupération des messages.';
     die();
 }
+

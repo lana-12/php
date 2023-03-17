@@ -3,7 +3,8 @@
 require_once '../dataBase/install.php';
 
 //mettre les message error success ds une div alerte
-
+// TODOLIST
+    //Utiliser la balise article
 
 // Display messages contact
 try {

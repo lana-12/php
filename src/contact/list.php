@@ -4,6 +4,7 @@ $title = "Contact/Liste";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
+require_once '../functions/function.php';
 require_once './controller/ListeController.php';
 
 ?>
@@ -33,32 +34,31 @@ require_once './controller/ListeController.php';
                                 <h3 class="card-title">Email:
                                     <?= $contact->email; ?>
                                 </h3>
-                                <p class="card-text text-muted">Envoyé le : <?= date("d/m/Y", strtotime($contact->created_At)); ?></p>
+                                <p class="card-text text-muted">Envoyé le : <?= dateFormat($contact->created_At); ?></p>
+
                                 <p class="card-text">
-                                    <?= $contact->message; ?>
+                                    
+                                    <?= getWord($contact->message); ?>
+
                                 </p>
+
                                 <div class="text-center">
-                                    <a href="/app/contact/view.php?id=<?= $contact->id ?>" type="button" class="btn btn-dark">Détail</a>
+                                    <a href="/src/contact/view.php?id=<?= $contact->id ?>" type="button" title="Cliquer pour voir le détail du message" alt="Cliquer pour voir le détail du message" class="btn btn-dark">Détail</a>
 
-                                    <!-- <a href="/app/contact/view.php?id=<?= $contact->id ?>" type="button" class="btn btn-dark delete">Supprimer</a>
-
-                                <button type="button" class="btn btn-dark " id="editBtn">Modifier</button> -->
-                                    <!-- <a href="/app/contact/edit.php" type="button" class="btn btn-dark " id="editBtn">Modifier</a> -->
                                 </div>
                             </div>
                         </div>
                     <?php endforeach;
-
                 } else {  ?>
-                    <div class="alert alert-danger text-center" role="alert">
+                    <div class="alert alert-success text-center" role="alert">
                         Vous n'avez aucun message.
                     </div>
                 <?php } ?>
 
             </div>
 
-        <?php } ?>
-        
+        <?php }; ?>
+
     </section>
 
 </main>

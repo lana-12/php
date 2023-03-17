@@ -7,11 +7,13 @@
     padding: 0;
 }
 
-a {
+/* a {
     color: inherit;
     text-decoration: none;
+} */
+a:hover{
+    font-weight: 600;
 }
-
 ul {
     list-style: none;
 }
@@ -19,3 +21,28 @@ ul {
 /* body{
     background-color: red;
 } */
+
+
+/*Footer start*/
+footer {
+    background-color: black;
+    border-top: #fff solid 1px;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+}
+.separator {
+    margin-top: 10px;
+    height: 1px;
+    width: 20%;
+    border: none;
+    background: #fff;
+    margin: auto;
+}
+.copyright {
+    font-size: 0.9em;
+    padding: 5px;
+    margin: 0;
+}
+/*Footer end*/

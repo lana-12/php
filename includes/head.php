@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/styles/style.css">
 
     <!-- ?? = si null -->
-    <title><?= $title ?? "Name" ?></title>
+    <title><?= $title ?? "Php" ?></title>
 </head>
 
 <body>

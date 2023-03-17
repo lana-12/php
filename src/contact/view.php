@@ -1,56 +1,37 @@
 <?php
+require_once './controller/ViewController.php';
 
-$title = "Contact/afficher/";
+
+$title = "Message/" . $contact->name;
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once './ContactController.php';
+require_once '../functions/function.php';
 
 ?>
+
 <main class="container">
     <section class="container mt-4">
-        <h1 class="text-center">Liste des messages contact</h1>
-    </section>
+        <h1 class="text-center">Message de :</h1>
+        <h2 class="text-center"> <?= $contact->name ?></h2>
 
-    <section class="container">
-        <div class="d-flex justify-content-center flex-wrap container   ">
-            <?php
-            if (isset($contacts)) {
-                foreach ($contacts as $contact) : ?>
-                    <div class="card bg-primary text-white m-5" style="width: 20rem;">
-                        <div class="card-body">
-                            <h3 class="card-title">De:
-                                <?= $contact->name; ?>
-                            </h3>
-                            <h3 class="card-title">Email:
-                                <?= $contact->email; ?>
-                            </h3>
-                            <p class="card-text text-muted">Envoyé le : <?= date("d/m/Y", strtotime($contact->created_At)); ?></p>
-                            <p class="card-text">
-                                <?= $contact->message; ?>
-                            </p>
-                            <div class="text-center">
-                                <a href="/app/contact/view.php?id=<?= $contact->id ?>" type="button" class="btn btn-dark delete">Supprimer</a>
+        <p class="text-muted">
+            <a href="mailto:<?= $contact->email ?>" title="Cliquer ici pour répondre au message" alt="Cliquer ici pour répondre au message">
+                <?= $contact->email ?>
+            </a>
+        </p>
 
-                                <button type="button" class="btn btn-dark " id="editBtn">Modifier</button>
-                                <!-- <a href="/app/contact/edit.php" type="button" class="btn btn-dark " id="editBtn">Modifier</a> -->
-                            </div>
+        <p>Reçu le: <?= dateFormat($contact->created_At); ?></p>
+        <p class="text-justify"><?= $contact->message ?></p>
 
-                        </div>
-                    </div>
-            <?php endforeach;
-            } else {
-                echo "oups echo view";
-            }
-            ?>
+        <div class="text-center">
+            <a href="/src/contact/delete.php?id=<?= $contact->id ?>" type="button" title="Cliquer pour supprimer le message" alt="Cliquer pour supprimer le message" class="btn btn-dark">Supprimer</a>
         </div>
 
     </section>
-    <div id="edit">
-
-    </div>
 
 </main>
+
 <?php
 require_once '../../includes/footer.php';
 
