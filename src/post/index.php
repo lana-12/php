@@ -1,40 +1,48 @@
 <?php
 
-$title = "Article";
+$title = "Article/";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
 require_once './PostController.php';
 
-
 ?>
+<main class="container">
 
-<section class="container">
-    <h1 class="text-center">Poster un article</h1>
-</section>
-<section>
-    <form method="POST" action="">
-        <div class="mb-3 form-group">
-            <label for="title" class="form-label">Titre</label>
-            <input type="text" class="form-control" id="title" aria-describedby="title" name="title" placeholder="Titre de l'article">
+    <section class="container my-4">
+        <h1 class="text-center">Liste des articles</h1>
+    </section>
 
+    <section class=" mt-5">
+        <div class="d-flex justify-content-center flex-wrap container   ">
+            <?php
+            if (isset($posts)) {
+                foreach ($posts as $post) : ?>
+
+                    <div class="card mb-5">
+                        <h3 class="card-header text-center"><?= $post->title; ?></h3>
+
+                        <div class="card-body">
+                            <h4 class="card-title"><?= $post->author; ?></h4>
+                            <p class="card-text text-muted">Publié le : <?= date("d/m/Y", strtotime($post->created_At)) ; ?></p>
+                            <p class="card-text"><?= $post->content; ?></p>
+
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn btn-primary">BTN</a>
+                            </div>
+                        </div>
+
+                    </div>
+                <?php endforeach;
+            } else {
+                echo "oups echo view";
+            }
+            ?>
         </div>
 
-        <div class="mb-3 form-group">
-            <label for="author" class="form-label">Auteur</label>
-            <input type="author" class="form-control" name="author" id="author" aria-describedby="author" placeholder="Votre nom">
-        </div>
-        <div class="mb-3 form-group">
-            <label for="content" class="form-label">Contenu</label>
-            <textarea type="text" class="form-control" id="content" aria-describedby="content" name="content" placeholder="Ici votre article ..."></textarea>
-        </div>
-        <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
-</section>
+    </section>
+
+</main>
 
 
 <?php

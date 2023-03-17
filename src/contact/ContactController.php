@@ -6,45 +6,41 @@ require_once '../dataBase/install.php';
 
 // Create message contact
 	try {
-		if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+		// if(isset($pdo)){
 
-			$query = $pdo->prepare('INSERT INTO contact (name, email, message) VALUE (:name, :email, :message)');
-			// var_dump($query);
-			//Premiere methodes en protégeant la request
-			$query->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
-			$query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-			$query->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
-
-			//Deuxième méthodes
-			// $query->execute([
-			// 	'name' => $_POST['name'],
-			// 	'email' => $_POST['email'],
-			// 	'message' => $_POST['message'],
-			// ]);
-			$query->execute();
-			echo $success = 'Merci bien envoyé';
-			header('Location: ./view.php');
-			exit();
-		}
+			if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+	
+				$query = $pdo->prepare('INSERT INTO contact (name, email, message) VALUE (:name, :email, :message)');
+				// var_dump($query);
+				//Premiere methodes en protégeant la request
+				$query->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+				$query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+				$query->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
+				
+				//Deuxième méthodes
+				// $query->execute([
+				// 	'name' => $_POST['name'],
+				// 	'email' => $_POST['email'],
+				// 	'message' => $_POST['message'],
+				// ]);
+				$query->execute();
+				echo $success = 'Message bien envoyé';
+				header('Location: ./index.php');
+				exit();
+			}
+		// }
 	} catch (PDOException $e) {
 		$error = $e->getMessage();
 		echo 'Oups une erreur s\'est produite';
 		die();
 	}
 
-// Display messages contact
-try {
-	$query = $pdo->prepare('SELECT * FROM contact');
-	// var_dump($query);
-	$query->execute();
-	$contacts = $query->fetchAll(PDO::FETCH_OBJ);
-	
 
-} catch (PDOException $e) {
-	$error = $e->getMessage();
-	echo 'Oups une erreur s\'est produite';
-	die();
-}
+// Display One MessageContact = findBy()
+	// Verifie si id
+		if(!isset($_GET["id"]) || empty($_GET["id"])){
+
+		}
 
 //	A FINIR
 // Edit message contact
@@ -74,6 +70,14 @@ function delete($pdo){
 			// var_dump($query);
 			$query->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
 			$query->execute();
+
+			// if ($query->execute()) {
+			// 	echo 'La suppression a bien été effectuée';
+			// } else {
+			// 	$errorInfo = $query->errorInfo();
+			// 	echo $errorInfo[2];
+			// }
+
 			echo 'Message supprimé';
 			header('Location: ./view.php');
 			exit();
@@ -84,7 +88,7 @@ function delete($pdo){
 		}
 	} 
 }
-delete($pdo);
+// delete($pdo);
 
 
     

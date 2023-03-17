@@ -13,8 +13,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/src/about/index.php">A propos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/src/post/index.php">Poster un article</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Article
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/src/post/create.php">Poster un Article</a></li>
+                                <li><a class="dropdown-item" href="/src/post/index.php">Liste des Articles</a></li>
+                                <!-- <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            </ul>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link" href="/src/contact/index.php">Contact</a>
@@ -24,8 +34,8 @@
                                 Contact
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/src/contact/index.php">Poster message Contact</a></li>
-                                <li><a class="dropdown-item" href="/src/contact/view.php">Visualiser les messages contact</a></li>
+                                <li><a class="dropdown-item" href="/src/contact/create.php">Poster message Contact</a></li>
+                                <li><a class="dropdown-item" href="/src/contact/list.php">Liste des messages</a></li>
                                 <!-- <li>
                                     <hr class="dropdown-divider">
                                 </li>

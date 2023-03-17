@@ -1,48 +1,56 @@
 <?php
 
-$title = "Contact/afficher";
+$title = "Contact/afficher/";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
 require_once './ContactController.php';
 
 ?>
+<main class="container">
+    <section class="container mt-4">
+        <h1 class="text-center">Liste des messages contact</h1>
+    </section>
 
-<section class="container">
-    <h1 class="text-center">Visualiser les messages contact</h1>
-</section>
+    <section class="container">
+        <div class="d-flex justify-content-center flex-wrap container   ">
+            <?php
+            if (isset($contacts)) {
+                foreach ($contacts as $contact) : ?>
+                    <div class="card bg-primary text-white m-5" style="width: 20rem;">
+                        <div class="card-body">
+                            <h3 class="card-title">De:
+                                <?= $contact->name; ?>
+                            </h3>
+                            <h3 class="card-title">Email:
+                                <?= $contact->email; ?>
+                            </h3>
+                            <p class="card-text text-muted">Envoyé le : <?= date("d/m/Y", strtotime($contact->created_At)); ?></p>
+                            <p class="card-text">
+                                <?= $contact->message; ?>
+                            </p>
+                            <div class="text-center">
+                                <a href="/app/contact/view.php?id=<?= $contact->id ?>" type="button" class="btn btn-dark delete">Supprimer</a>
 
-<section class="container">
-    <div class="d-flex justify-content-center flex-wrap container   ">
-        <?php
-        foreach ($contacts as $contact) { ?>
-            <div class="card bg-primary text-white m-5" style="width: 20rem;">
-                <div class="card-body">
-                    <h3 class="card-title">
-                        <?= $contact->name; ?>
-                    </h3>
+                                <button type="button" class="btn btn-dark " id="editBtn">Modifier</button>
+                                <!-- <a href="/app/contact/edit.php" type="button" class="btn btn-dark " id="editBtn">Modifier</a> -->
+                            </div>
 
-                    <h5 class="card-subtitle mb-2 text-muted">
-                        <?= $contact->email; ?>
-                    </h5>
-                    <p class="card-text">
-                        <?= $contact->message; ?>
-                    </p>
-                    <div class="text-center">
-                        <a href="/app/contact/view.php?id=<?= $contact->id ?>" type="button" class="btn btn-dark delete">Supprimer</a>
-
-                        <button type="button" class="btn btn-dark " id="editBtn">Modifier</button>
-                        <!-- <a href="/app/contact/edit.php" type="button" class="btn btn-dark " id="editBtn">Modifier</a> -->
+                        </div>
                     </div>
+            <?php endforeach;
+            } else {
+                echo "oups echo view";
+            }
+            ?>
+        </div>
 
-                </div>
-            </div>
-        <?php } ?>
+    </section>
+    <div id="edit">
 
-</section>
-<div id="edit">
+    </div>
 
-</div>
+</main>
 <?php
 require_once '../../includes/footer.php';
 
