@@ -19,7 +19,7 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/src/post/create.php">Poster un Article</a></li>
-                                <li><a class="dropdown-item" href="/src/post/index.php">Liste des Articles</a></li>
+                                <li><a class="dropdown-item" href="/src/post/list.php">Liste des Articles</a></li>
                                 <!-- <li>
                                     <hr class="dropdown-divider">
                                 </li>

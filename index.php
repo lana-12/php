@@ -9,12 +9,18 @@ require_once 'src/functions/function.php';
 use Database\DBConnection;
 
 ?>
-    <main>
-        <section class="container">
+    <main class="container">
+        <section class="container my-4">
             <h1 class="text-center">Page Accueil</h1>
         </section>
 
         <section>
+            <p>Projet qui me permet de pratiquer:</p>
+                <ul>
+                    <li>PHP</li>
+                    <li>PDO</li>
+                    <li>SQL</li>
+                </ul>
         <?php ?>
         </section>
 

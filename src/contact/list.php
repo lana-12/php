@@ -14,13 +14,14 @@ require_once './controller/ListeController.php';
     </section>
 
     <section class="container">
-        <?php
+    <?php
         if (isset($error)) { ?>
+
             <div class="alert alert-danger text-center" role="alert">
                 <?= $error; ?>
             </div>
 
-        <?php } else {  ?>
+    <?php } else {  ?>
             <div class="d-flex justify-content-center flex-wrap container   ">
                 <?php
 
@@ -38,7 +39,7 @@ require_once './controller/ListeController.php';
 
                                 <p class="card-text">
                                     
-                                    <?= getWord($contact->message); ?>
+                                    <?= getWord($contact->message, 10); ?>
 
                                 </p>
 

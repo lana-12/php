@@ -11,14 +11,19 @@ function dump($variable){
  * Function get the first 10 words of the message
  * params= message
  */
-function getWord($text)
+
+function getWord($text, $nbWord)
 {
-    $nbWord = 10;
+    // $nbWord = 10;
     $arrayWord = explode(' ', $text, $nbWord + 1);
     unset($arrayWord[$nbWord]);
-    echo implode(' ', $arrayWord) . '...';
+    echo implode(' ', $arrayWord) . ' ...';
 }
 
+/**
+ * function formaté la date en français, affiche uniquement le jour de la création
+ * params = created_At de l'object
+ */
 function dateFormat($date){
     return date("d/m/Y", strtotime($date));
 }
