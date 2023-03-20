@@ -2,7 +2,7 @@
     "name": "giaco/php",
     "autoload": {
         "psr-4": {
-            "src\\":"src/"
+            "src\\": "src/"
         }
     },
     "authors": [
@@ -11,6 +11,7 @@
             "email": "lana.12@wanadoo.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "doctrine/orm": "^2.14"
+    }
 }
-

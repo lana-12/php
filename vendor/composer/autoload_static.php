@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
+class ComposerStaticInit0a6b26b48e28e158869a9b759854fa9d
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -18,6 +18,10 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
     );
 
     public static $prefixLengthsPsr4 = array (
+        's' => 
+        array (
+            'src\\' => 4,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -36,10 +40,6 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
         ),
-        'G' => 
-        array (
-            'Giaco\\Php\\' => 10,
-        ),
         'D' => 
         array (
             'Doctrine\\Persistence\\' => 21,
@@ -56,6 +56,10 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
     );
 
     public static $prefixDirsPsr4 = array (
+        'src\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -104,10 +108,6 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'Giaco\\Php\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Doctrine\\Persistence\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence',
@@ -146,8 +146,8 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/common/src',
-            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+            1 => __DIR__ . '/..' . '/doctrine/common/src',
         ),
     );
 
@@ -164,9 +164,9 @@ class ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitdcfe007d4f374cb30f3231c4f08678aa::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0a6b26b48e28e158869a9b759854fa9d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0a6b26b48e28e158869a9b759854fa9d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0a6b26b48e28e158869a9b759854fa9d::$classMap;
 
         }, null, ClassLoader::class);
     }
