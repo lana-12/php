@@ -1,56 +1,65 @@
 <?php
+// require_once './controller/ViewController.php';
 
-require_once './controller/EditController.php';
+
+
 $title = "Article/Modifier";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
+require_once './controller/EditController.php';
 
 ?>
+
 <main class="container">
 
     <section class="container my-4">
         <h1 class="text-center">Modifier l'article</h1>
-        FAIRE LA LOGIQUE
     </section>
+
     <section>
+        
         <?php
-        if (isset($error)) { ?>
+        if ($success): ?>
+            <div class="alert alert-success text-center" role="alert">
+                <?= $success; ?>
+            </div>
+        <?php   endif ?>
+
+        <?php if (isset($error)) : ?>
             <div class="alert alert-danger text-center" role="alert">
                 <?= $error; ?>
             </div>
-
-        <?php } else {  ?>
+        <?php   else : ?>
             <form method="POST" action="">
                 <div class="mb-3 form-group">
                     <label for="title" class="form-label">Titre</label>
-                    <input type="text" class="form-control" id="title" aria-describedby="title" name="title" placeholder="Titre de l'article" value="">
+                    <input type="text" class="form-control" id="title" aria-describedby="title" name="title" value="<?= htmlentities($post->title); ?>">
 
                 </div>
 
                 <div class="mb-3 form-group">
                     <label for="author" class="form-label">Auteur</label>
-                    <input type="author" class="form-control" name="author" id="author" aria-describedby="author" placeholder="Votre nom" value="">
+                    <input type="author" class="form-control" name="author" id="author" aria-describedby="author" value="<?= htmlentities($post->author); ?>">
                 </div>
                 <div class="mb-3 form-group">
                     <label for="content" class="form-label">Contenu</label>
-                    <textarea type="text" class="form-control" id="content" aria-describedby="content" name="content" placeholder="Ici votre article ..." value=""></textarea>
-                </div>
-                <!-- <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div> -->
-                <div class="text-center">
-                    <button type=" submit" class="btn btn-primary ">Modifier</button>
+                    <textarea type="text" class="form-control" id="content" aria-describedby="content" name="content" value=""><?= htmlentities($post->content); ?></textarea>
                 </div>
 
-            <?php } ?>
+                <div class="text-center">
+                    <button class="btn btn-primary ">Modifier</button>
+                </div>
+
+            <?php endif ?>
 
             </form>
 
+
+
+
     </section>
 </main>
-
 <?php
 require_once '../../includes/footer.php';
 

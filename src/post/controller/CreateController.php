@@ -1,6 +1,6 @@
 <?php
 //TODOLIST
-// Change la redirection une fois créé
+// Change la redirection une fois créé => mise en place d'une alert pour success ou error =>ok
 
 require_once '../database/install.php';
 
@@ -28,15 +28,15 @@ try {
         // ]);
         $query->execute();
         //A revoir car bloque la navBar
-        echo $success = 'Message bien envoyé';
+        $success = 'Votre article a bien été enregisté';
 
         //CHANGER LA REDIRECTION PEUT-ETRE view post ???
-        header('Location: ./create.php');
-        exit;
+        // header('Location: ./create.php');
+        // exit;
     }
     // }
 } catch (PDOException $e) {
-    $error = $e->getMessage();
-    echo 'Oups une erreur s\'est produite';
+    // $error = $e->getMessage();
+    $error = 'Oups une erreur s\'est produite';
     die();
 }

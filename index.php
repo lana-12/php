@@ -1,12 +1,13 @@
 <?php
-$title = "Accueil";
 require_once 'vendor/autoload.php';
+$title = "Accueil";
 require_once 'includes/head.php';
 require_once 'includes/header.php';
 require_once 'src/functions/function.php';
 // require_once './src/dataBase/createBDD.php';
 
 use Database\DBConnection;
+
 
 ?>
     <main class="container">

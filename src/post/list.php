@@ -26,17 +26,17 @@ require_once './controller/ListeController.php';
                 <?php
                 if (isset($posts)) {
                     foreach ($posts as $post) :
-                        var_dump($post->id); ?>
+                        ?>
 
 
                         <div class="card m-5 " style="width: 20rem;">
                             <h3 class="card-header text-center"><?= $post->title; ?></h3>
 
                             <div class="card-body">
-                                <p class="card-text"><?= getWord($post->content, 50); ?></p>
+                                <p class="card-text"><?= getWord($post->content, 30); ?></p>
 
                                 <div class="d-flex justify-content-center">
-                                    <a href="/src/post/view.php?id=<?= $post->id ?>" type="button" title="Cliquer pour accéder au détail de l'artivle" alt="Cliquer pour accéder au détail de l'artivle" class="btn btn-dark">Voir l'article</a>
+                                    <a href="/src/post/view.php?id=<?= $post->id ?>" type="button" title="Cliquer pour accéder au détail de l'artivle" alt="Cliquer pour accéder au détail de l'artivle" class="btn btn-dark">Lire la suite</a>
                                 </div>
 
                             </div>

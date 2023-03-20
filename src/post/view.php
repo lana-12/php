@@ -25,6 +25,7 @@ require_once '../functions/function.php';
 
         <div class="text-center">
             <a href="/src/post/edit.php?id=<?= $post->id ?>" type="button" title="Cliquer pour modifier l'article" alt="Cliquer pour modifier l'article" class="btn btn-dark">Modifier</a>
+            
             <a href="/src/post/delete.php?id=<?= $post->id ?>" type="button" title="Cliquer pour supprimer l'article" alt="Cliquer pour supprimer l'article" class="btn btn-dark">Supprimer</a>
         </div>
 

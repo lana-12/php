@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'giaco/php',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '53c827a52f8806d598f2c066d89fa178ac4d9712',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -110,9 +110,9 @@
             'dev_requirement' => false,
         ),
         'giaco/php' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '53c827a52f8806d598f2c066d89fa178ac4d9712',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
