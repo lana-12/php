@@ -69,9 +69,10 @@ use Database\DBConnection;
 
                 <li>User</li>
                 <ul>
-                    <li>Create an user</li>
-                    <li>Authentificator user</li>
-                    <li>Compte user </li>
+                    <li>Create an user => ok</li>
+                    <li>Authentificator user => ok</li>
+                    <li>Compte user => ok</li>
+                    <li>Faire des vérifications sur MDP, email unique...</li>
                 </ul>
             </ul>
         </div>

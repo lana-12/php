@@ -1,15 +1,9 @@
 <?php
 require_once './controller/ProfileController.php';
 
-// Vérifier l adresse eamil ou MDP avec token
-
-
 $title = $_SESSION['user']['name'];
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-
-// use Database\DBConnection;
-
 
 ?>
 <main class="container">
@@ -25,7 +19,6 @@ require_once '../../includes/header.php';
     </section>
 
 </main>
-
 
 <?php
 require_once '../../includes/footer.php';

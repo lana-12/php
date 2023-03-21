@@ -1,14 +1,15 @@
 <?php
-// On démarre la session
+//
+
+//TODOLIST
+// Change la redirection une fois créé => mise en place d'une alert pour success ou error =>ok
+
 session_start();
 
-//Si user Non connecté => rediriger vers connexion
 if (!isset($_SESSION['user'])) {
     header("Location: ../user/login.php");
     exit;
 }
-//TODOLIST
-// Change la redirection une fois créé => mise en place d'une alert pour success ou error =>ok
 
 require_once '../database/install.php';
 

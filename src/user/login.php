@@ -6,7 +6,7 @@ $title = "Connexion";
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
 
-// use Database\DBConnection;
+
 
 ?>
 <main class="container">
