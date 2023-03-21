@@ -1,6 +1,5 @@
 <?php
 
-
 function dump($variable){
     echo '<pre>';
     var_dump($variable);
@@ -11,7 +10,6 @@ function dump($variable){
  * Function get the first 10 words of the message
  * params= message
  */
-
 function getWord($text, $nbWord)
 {
     // $nbWord = 10;
@@ -21,14 +19,11 @@ function getWord($text, $nbWord)
 }
 
 /**
- * function formaté la date en français, affiche uniquement le jour de la création
- * params = created_At de l'object
+ * function pour formater la date en français, affiche uniquement le jour de la création
+ * params = created_At de l'objet
  */
 function dateFormat($date){
     return date("d/m/Y", strtotime($date));
 }
 
 
-function isPair(int $nbr){
-    echo $nbr . ' ' .($nbr %2 === 0 ? ' est pair' : ' est impair').'<br>';
-}
