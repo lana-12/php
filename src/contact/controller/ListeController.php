@@ -1,4 +1,7 @@
 <?php
+// On démarre la session
+session_start();
+
 // Séparation ok - 17/03/23
 // TODO lIST
     // Afficher moins de détail=>ok

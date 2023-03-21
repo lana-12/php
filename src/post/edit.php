@@ -1,5 +1,6 @@
 <?php
-// require_once './controller/ViewController.php';
+require_once './controller/EditController.php';
+
 
 
 
@@ -7,7 +8,6 @@ $title = "Article/Modifier";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once './controller/EditController.php';
 
 ?>
 
@@ -18,19 +18,21 @@ require_once './controller/EditController.php';
     </section>
 
     <section>
-        
+
         <?php
-        if ($success): ?>
+        if ($success) : ?>
             <div class="alert alert-success text-center" role="alert">
                 <?= $success; ?>
+                <p><a href="./list.php" title="Retour à la liste d'Articles " alt="Retour à la liste d'Articles ">Retour à la liste d'Articles </a></p>
             </div>
-        <?php   endif ?>
+        <?php endif ?>
 
         <?php if (isset($error)) : ?>
             <div class="alert alert-danger text-center" role="alert">
                 <?= $error; ?>
+                <p><a href="../../index.php" title="Retour à l'accueil " alt="Retour à l'accueil ">Retour à l'accueil </a></p>
             </div>
-        <?php   else : ?>
+        <?php else : ?>
             <form method="POST" action="">
                 <div class="mb-3 form-group">
                     <label for="title" class="form-label">Titre</label>
@@ -44,7 +46,7 @@ require_once './controller/EditController.php';
                 </div>
                 <div class="mb-3 form-group">
                     <label for="content" class="form-label">Contenu</label>
-                    <textarea type="text" class="form-control" id="content" aria-describedby="content" name="content" value=""><?= htmlentities($post->content); ?></textarea>
+                    <textarea type="text" class="form-control" id="content" aria-describedby="content" name="content" value="" ><?= htmlentities($post->content); ?></textarea>
                 </div>
 
                 <div class="text-center">

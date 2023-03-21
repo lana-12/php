@@ -1,10 +1,10 @@
 <?php
+require_once './controller/CreateController.php';
 
 $title = "Article/Poster";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once './controller/CreateController.php';
 ?>
 <main class="container">
 

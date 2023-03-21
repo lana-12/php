@@ -1,10 +1,10 @@
 <?php
+require_once './controller/CreateController.php';
 
 $title = "Contact";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once './controller/CreateController.php';
 
 ?>
 <main class="container">
@@ -12,10 +12,16 @@ require_once './controller/CreateController.php';
     <section class="container my-3">
         <h1 class="text-center">Nous contacter</h1>
     </section>
-
     <section class="container">
         <?php
-        if (isset($error)) { ?>
+        if (isset($success)) { ?>
+            <div class="alert alert-success text-center" role="alert">
+                <?= $success; ?>
+                <p><a href="../../index.php" title="Retour à l'Accueil" alt="Retour à l'Accueil">Retour à l'Accueil</a></p>
+
+            </div>
+        <?php } ?>
+        <?php if (isset($error)) { ?>
             <div class="alert alert-danger text-center" role="alert">
                 <?= $error; ?>
             </div>
@@ -35,7 +41,7 @@ require_once './controller/CreateController.php';
 
                     <!-- <div id="email" class="form-text">We'll never share your email with anyone else.</div> -->
                 </div>
-                
+
                 <div class="mb-3 form-group">
                     <label for="message" class="form-label">Votre message</label>
                     <textarea type="text" class="form-control" id="message" aria-describedby="message" name="message" placeholder="Tapez votre message..."></textarea>
@@ -48,10 +54,10 @@ require_once './controller/CreateController.php';
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </div>
 
-                <?php } ?>
+            <?php } ?>
             </form>
     </section>
-    
+
 </main>
 
 <?php

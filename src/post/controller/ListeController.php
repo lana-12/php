@@ -1,4 +1,7 @@
 <?php
+// On démarre la session
+session_start();
+
 
 // TODO lIST
     // Afficher moins de détail=>ok

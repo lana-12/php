@@ -1,4 +1,6 @@
 <?php
+// On démarre la session
+session_start();
 
 require_once '../database/install.php';
 

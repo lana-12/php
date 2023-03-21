@@ -1,11 +1,11 @@
 <?php
+require_once '../functions/function.php';
+require_once './controller/ListeController.php';
 
 $title = "Contact/Liste";
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once '../functions/function.php';
-require_once './controller/ListeController.php';
 
 ?>
 <main class="container">
@@ -14,14 +14,15 @@ require_once './controller/ListeController.php';
     </section>
 
     <section class="container">
-    <?php
+        <?php
         if (isset($error)) { ?>
 
             <div class="alert alert-danger text-center" role="alert">
                 <?= $error; ?>
+                <p><a href="../../index.php" title="Retour à l'accueil " alt="Retour à l'accueil ">Retour à l'accueil </a></p>
             </div>
 
-    <?php } else {  ?>
+        <?php } else {  ?>
             <div class="d-flex justify-content-center flex-wrap container   ">
                 <?php
 
@@ -32,13 +33,11 @@ require_once './controller/ListeController.php';
                                 <h3 class="card-title">De:
                                     <?= $contact->name; ?>
                                 </h3>
-                                <h3 class="card-title">Email:
-                                    <?= $contact->email; ?>
-                                </h3>
+                                
                                 <p class="card-text text-muted">Envoyé le : <?= dateFormat($contact->created_At); ?></p>
 
                                 <p class="card-text">
-                                    
+
                                     <?= getWord($contact->message, 10); ?>
 
                                 </p>

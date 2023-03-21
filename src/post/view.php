@@ -1,12 +1,12 @@
 <?php
 require_once './controller/ViewController.php';
+require_once '../functions/function.php';
 
 
 $title = $post->title;
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once '../functions/function.php';
 
 ?>
 

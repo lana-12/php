@@ -1,4 +1,7 @@
 <?php
+// On démarre la session
+session_start();
+
 // Séparation ok - 17/03/23
 
 // TODO lIST
@@ -32,11 +35,11 @@ try {
         $query->execute();
 
         //A revoir car bloque la navBar
-        echo $success = 'Message bien envoyé';
+        $success = 'Message bien envoyé';
 
         //CHANGER LA REDIRECTION PEUT-ETRE ACCUEIL OU LIST ???
-        header('Location: ./create.php');
-        exit;
+        // header('Location: ./create.php');
+        // exit;
     }
     // }
 } catch (PDOException $e) {

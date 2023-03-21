@@ -1,4 +1,5 @@
 <?php
+require_once '../functions/function.php';
 require_once './controller/ViewController.php';
 
 
@@ -6,7 +7,6 @@ $title = "Message/" . $contact->name;
 
 require_once '../../includes/head.php';
 require_once '../../includes/header.php';
-require_once '../functions/function.php';
 
 ?>
 

@@ -6,7 +6,12 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+    height: 200vh;
+}
+/* main{
+    height: 100%;
+} */
 /* a {
     color: inherit;
     text-decoration: none;
@@ -22,15 +27,28 @@ a:hover{
     background-color: red;
 } */
 
+/* Page Index.php START*/
+.box{
+    border: solid #000 2px;
+    padding-top: 25px;
+    background: #007bff;
+    border-radius: 3%;
+    box-shadow: 10px 5px 5px #000;
+    margin-top: 50px;
+}
+/* Page Index.php END*/
+
+
 
 /*Footer start*/
 footer {
     background-color: black;
     border-top: #fff solid 1px;
     height: auto;
-    position: fixed;
+    position:fixed;
     bottom: 0;
     color: #fff;
+    margin-top: 50px;
 }
 .separator {
     margin-top: 10px;

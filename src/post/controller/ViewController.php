@@ -1,4 +1,7 @@
 <?php
+// On démarre la session
+session_start();
+
 //TODOLIST
     //Résoudre le probleme display du title => ok
     // Revoir le message si post existe pas
