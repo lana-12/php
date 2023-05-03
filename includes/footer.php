@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 ">
                     <p class="text-center copyright">Copyright @ 2023 All rights reserved by :
-                        <a href="mailto:giacomettivirginie@gmail.com"><strong>Virginie Giacometti</strong></a>
+                        <a href="mailto:giacomettivirginie@gmail.com" alt="Contactez-moi par mail" title="Contactez-moi par mail"><strong>Virginie Giacometti</strong></a>
                     </p>
                 </div>
             </div>

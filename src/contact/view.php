@@ -21,7 +21,7 @@ require_once '../../includes/header.php';
             </a>
         </p>
 
-        <p>Reçu le: <?= dateFormat($contact->created_At); ?></p>
+        <p>Reçu le: <?= dateFormat($contact->created_at); ?></p>
         <p class="text-justify"><?= $contact->message ?></p>
 
         <div class="text-center">

@@ -21,7 +21,7 @@ editBtn.addEventListener("click", ()=>{
             console.log(typeof xhr)
             
             let datas = xhr.response;
-           
+        
             console.log(typeof datas)
             console.log(datas)
 

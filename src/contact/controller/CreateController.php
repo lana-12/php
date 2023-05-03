@@ -10,7 +10,7 @@ session_start();
 
 require_once '../database/install.php';
 
-
+var_dump($_POST);
 // Create message contact
 try {
     if(!isset($pdo)){

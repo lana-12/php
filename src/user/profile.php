@@ -16,6 +16,7 @@ require_once '../../includes/header.php';
         <h2>Bienvenue <?= $_SESSION['user']['name'] ?> </h2>
         <p>Pseudo : <?= $_SESSION['user']['name'] ?></p>
         <p>Email : <?= $_SESSION['user']['email'] ?></p>
+        <p>Role : <?= $_SESSION['user']['roles'] ?></p>
     </section>
 
 </main>

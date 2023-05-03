@@ -33,8 +33,9 @@ require_once '../../includes/header.php';
                                 <h3 class="card-title">De:
                                     <?= $contact->name; ?>
                                 </h3>
-                                
-                                <p class="card-text text-muted">Envoyé le : <?= dateFormat($contact->created_At); ?></p>
+                            
+                                <p class="card-text text-muted">Envoyé le : <?=
+                                dateFormat($contact->created_at); ?></p>
 
                                 <p class="card-text">
 

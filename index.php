@@ -9,9 +9,6 @@ require_once 'includes/header.php';
 require_once 'src/functions/function.php';
 // require_once './src/dataBase/createBDD.php';
 
-use Database\DBConnection;
-
-
 ?>
 <main class="container">
     <section class="container my-4">
@@ -19,8 +16,7 @@ use Database\DBConnection;
         <p class="mt-4">Ce projet me permet de pratiquer.</p>
     </section>
     
-        <!-- <a class="nav-link" href="./src/user/register.php">S'inscrire</a>
-        <a class="nav-link" href="./src/user/login.php">Connexion</a> -->
+        <!-- <a class="nav-link" href="./src/upload/upload.php">Lien vers = Ajout de fichier</a><span>en développement</span> -->
 
     <section class="container ">
         <div class="box">
